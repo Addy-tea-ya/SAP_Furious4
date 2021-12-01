@@ -1,1 +1,1 @@
-web: gunicorn trial:trafficmanagementhack
+web: gunicorn trial:app
