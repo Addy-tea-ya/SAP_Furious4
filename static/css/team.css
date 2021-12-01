@@ -1,0 +1,85 @@
+/* Three columns side by side */
+body{
+  padding-top: 80px;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.column {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 16px;
+    padding: 0 15px;  
+  }
+
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  /* Add some shadows to create a card effect */
+  .card {
+    box-shadow: 0 15px 20px 0 black;
+    background-color: grey;
+  }
+  
+  /* Some left and right padding inside the container */
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Clear floats */
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .row{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 30px;
+  }
+  .title {
+    color: white;
+    padding-top: 10px;
+  }
+  
+.social{
+  justify-content: center;
+  display: flex;
+  padding-bottom: 20px;
+  /*padding-left: 3px;*/
+}
+.social img{
+  margin: 4px;
+  display: block;
+  box-sizing: border-box;
+}
+/*  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  */
