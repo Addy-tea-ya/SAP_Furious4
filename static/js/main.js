@@ -1,4 +1,4 @@
-var url="https://trafficmanagementhack.herokuapp.com";
+var url="https://trafficmanagementhack.herokuapp.com/";
 var junc=[];
 function send()
 {
