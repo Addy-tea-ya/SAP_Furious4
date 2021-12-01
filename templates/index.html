@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='images/street-scene-hyderabad-india-A3E07T.jpg') }}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>TEAM FURIOUS-4</h1>
+          <span class="subheading">Pimpri Chinchwad College Of Engineering, Pune</span>
+      </div>
+  </div>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<script type = "text/javascript">
+var url="http://localhost:5000/";
+var junc=[];
+function send()
+{
+        var data = {};
+        data.junction1 = [];
+        
+        var json = JSON.stringify(data);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhr.onload = function () {
+            
+            var users = JSON.parse(xhr.responseText);
+            var rec=JSON.parse(xhr.responseText);
+            var junc=rec['task']['junction1'];
+            
+            a1=document.createElement("text");
+            a1.id="junc1";
+            document.getElementById('div1').appendChild(a1);
+            document.getElementById("junc1").innerHTML = String(junc[0]);
+
+            a1=document.createElement("text");
+            a1.id="junc2";
+            document.getElementById('div2').appendChild(a1);
+            document.getElementById("junc2").innerHTML = String(junc[1]);
+
+            a1=document.createElement("text");
+            a1.id="junc3";
+            document.getElementById('div3').appendChild(a1);
+            document.getElementById("junc3").innerHTML = String(junc[2]);
+
+            a1=document.createElement("text");
+            a1.id="junc4";
+            document.getElementById('div4').appendChild(a1);
+            document.getElementById("junc4").innerHTML = String(junc[3]);
+        if (xhr.readyState == 4 && xhr.status == "201") {
+        console.table(users);
+        } else {
+        console.error(users);
+        }
+        }
+        
+        
+    xhr.send(json);
+}
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <link href="{{ url_for('static', filename='css/columns.css') }}" rel="stylesheet" />
+          <p style="text-align:center;margin-top:0%;">JUNCTION 1</p>
+          <button class="button"  style="text-align: center;    
+          margin-left:45%;background-color: #008CBA;
+          margin-right:25%;" onclick="send()" >VIEW</button>
+       <br>
+       <br>
+        
+        <div class="columns1">
+          <div class="column1" id = "div1">
+            Road-1<br><br>
+            
+        </div>
+        <div class="column1" id = "div2">
+            Road-2<br><br>
+        </div>
+        <div class="column1" id = "div3">
+            Road-3<br><br>
+        </div>
+        <div class="column1" id = "div4">
+            Road-4<br><br>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}
+
+
