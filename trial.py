@@ -42,4 +42,5 @@ def about():
 def contact():
     return render_template('contact.html')
 CORS(app)
-app.run()
+if __name__ == '__main__':
+    app.run()
